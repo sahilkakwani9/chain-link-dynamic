@@ -10,7 +10,8 @@ module.exports = {
         'hero-pattern': "url('/ethBg.jpg')",
       },
       fontFamily: {
-        'One': ["Unbounded"]
+        'One': ["Unbounded"],
+        'Two': ["Inter"]
       }
     },
   },
