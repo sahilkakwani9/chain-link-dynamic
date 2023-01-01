@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import connectWallet from '../utils/connectWallet'
+import ConnectWallet from '../utils/ConnectWallet'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -31,7 +31,7 @@ export default function Home() {
         </h1>
         <div className='text-center mt-24'>
           <button type="button" onClick={async()=>{
-            await connectWallet(walletConnected,setwalletConnected,setcurrentAccount);
+            await ConnectWallet(walletConnected,setwalletConnected,setcurrentAccount);
           }} class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-bold rounded-lg text-2xl px-9 py-5 text-center mr-2 mb-2">Connect Wallet</button>
         </div>
       </div>

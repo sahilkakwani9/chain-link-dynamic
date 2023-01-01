@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-const connectWallet = async (walletConnected,setWalletConnected,setCurrentAccount) => {
+const ConnectWallet = async (walletConnected,setWalletConnected,setCurrentAccount) => {
     try {
         const { ethereum } = window;
         if (!ethereum) {
@@ -43,4 +43,4 @@ const connectWallet = async (walletConnected,setWalletConnected,setCurrentAccoun
 
   }
 
-export default connectWallet;
+export default ConnectWallet;

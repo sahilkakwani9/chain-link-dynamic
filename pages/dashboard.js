@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import getNFT from '../utils/getNft';
-import getURI from '../utils/getURI'
+import GetNFT from '../utils/GetNFT';
+import GetURI from '../utils/GetURI';
 
 function dashboard() {
     const [nft, setNft] = useState({});
@@ -11,12 +11,12 @@ function dashboard() {
 
     const resolveURI = async() => {
         try {
-            const result = await getURI();
-            const res = await getNFT(result.nft);
+            const result = await GetURI();
+            const res = await GetNFT(result.nft);
             setNft(res);
             populateArray(parseInt(result.total._hex, 16));
         } catch (error) {
-            console.error(error)
+            console.error(error);
         }
     }
 
@@ -26,24 +26,6 @@ function dashboard() {
             num[x] = x;
         }
         setSupply(num)
-    }
-
-    const allNFT = () =>{
-        for(let i=0; i<=2; i++) {
-            console.log(2);
-            return (<div className='flex justify-between items-center px-40 mt-12 flex-wrap gap-y-8'>
-            <div className='text-left'>
-            <div className='w-80 h-48'>
-                <img src={nft.image} className='h-[100%] w-full rounded-md shadow-lg shadow-gray-400' />
-            </div>
-            <div>
-                <h3 className='font-Two font-bold text-red-400 text-lg'>{nft.name}{i}</h3>
-                <p className='font-One text-sm font-extralight text-black'>{nft.description}</p>
-            </div>
-            </div>
-            
-        </div>)
-        }
     }
 
   return (

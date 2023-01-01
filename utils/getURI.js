@@ -1,7 +1,7 @@
-import { ABI, contractAddress } from "./constants";
+import { ABI, contractAddress } from "./Constants";
 import { ethers } from "ethers";
 
-const getURI = async () =>{
+const GetURI = async () =>{
     try {
         const {ethereum} = window;
         if(ethereum){
@@ -20,4 +20,4 @@ const getURI = async () =>{
     }
 }
 
-export default getURI;
+export default GetURI;
