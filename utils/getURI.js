@@ -8,8 +8,12 @@ const getURI = async () =>{
             const provider = new ethers.providers.Web3Provider(ethereum, "any");
             const signer = provider.getSigner();
             const contract = new ethers.Contract(contractAddress, ABI, signer);
-            const nft = contract.tokenURI(1);
-            return nft;
+            const total = await contract.totalSupply();
+            const nft = await contract.tokenURI(1);
+            return {
+                nft: nft,
+                total: total
+            };
         }
     } catch (error) {
         console.error(error);
