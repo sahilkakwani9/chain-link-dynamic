@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GetNFT from '../utils/GetNFT';
 import GetURI from '../utils/GetURI';
+import Mint from '../utils/Mint';
 
 function dashboard() {
     const [nft, setNft] = useState({});
@@ -28,12 +29,16 @@ function dashboard() {
         setSupply(num)
     }
 
+    const mintNft = async () =>{
+        await Mint();
+    }
+
   return (
     <div className='min-h-screen bg-[#85d7d9]'>
         <div className='text-center'>
             <div className='flex justify-between h-26 pt-6 px-4'>
             <h2 className='text-7xl font-One font-bold text-gray-700'>Live <span className='underline text-[#6b63de]'>NFT's</span></h2>
-            <button className='hidden md:block text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-bold rounded-lg text-2xl px-9 py-5 text-center mr-2 mb-2'>Mint New</button>
+            <button onClick={mintNft} className='hidden md:block text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-bold rounded-lg text-2xl px-9 py-5 text-center mr-2 mb-2'>Mint New</button>
             </div>
             <div className='flex justify-between items-center mt-12 flex-wrap gap-y-8'>
             {
